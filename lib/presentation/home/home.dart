@@ -1,3 +1,4 @@
+import 'package:course_online/presentation/dashboard/dashboard.dart';
 import 'package:course_online/widgets/icon_with_label.dart';
 import 'package:flutter/material.dart';
 
@@ -23,34 +24,47 @@ class Home extends StatelessWidget {
       ),
       // Code dibawah saat Latihan 1 Layouting
 
-      body: Center(
-        child: Container(
-          color: Colors.grey[300],
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              IconWithLabel(
-                icon: Icons.call,
-                text: "Call",
-                iconColor: Colors.red,
-                textColor: Colors.black,
-              ),
-              IconWithLabel(
-                icon: Icons.near_me,
-                text: "Route",
-                iconColor: Colors.green,
-                textColor: Colors.deepOrange,
-              ),
-              IconWithLabel(
-                icon: Icons.share,
-                text: "Share",
-                iconColor: Colors.indigo,
-                textColor: Colors.indigoAccent,
-              ),
-            ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Colors.blue),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Dashboard()),
+              );
+            },
+            child: const Text('Go to Dashboard'),
           ),
-        ),
+          Container(
+            color: Colors.grey[300],
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                IconWithLabel(
+                  icon: Icons.call,
+                  text: "Call",
+                  iconColor: Colors.red,
+                  textColor: Colors.black,
+                ),
+                IconWithLabel(
+                  icon: Icons.near_me,
+                  text: "Route",
+                  iconColor: Colors.green,
+                  textColor: Colors.deepOrange,
+                ),
+                IconWithLabel(
+                  icon: Icons.share,
+                  text: "Share",
+                  iconColor: Colors.indigo,
+                  textColor: Colors.indigoAccent,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
 
       // code dibawah saat belajar Row (Ke samping)
