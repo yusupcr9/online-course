@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
-  const Dashboard({Key? key}) : super(key: key);
+  const Dashboard({
+    Key? key,
+    this.title = "Dashboard",
+    required this.textButton,
+  }) : super(key: key);
+  final String title;
+  final String textButton;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text(
-          "Halaman Dashboard",
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          title,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
       body: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text("Back")),
+          child: Text(textButton)),
     );
   }
 }

@@ -32,7 +32,11 @@ class Home extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Dashboard()),
+                MaterialPageRoute(
+                    builder: (context) => const Dashboard(
+                          textButton: "Kembali ke Home",
+                          title: "Halaman Dashboard / Yusup",
+                        )),
               );
             },
             child: const Text('Go to Dashboard'),
