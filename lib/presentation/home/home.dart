@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:course_online/presentation/dashboard/dashboard.dart';
+import 'package:course_online/router/router.gr.dart';
 import 'package:course_online/widgets/icon_with_label.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +32,8 @@ class Home extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Colors.blue),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const Dashboard(
-                          textButton: "Kembali ke Home",
-                          title: "Halaman Dashboard / Yusup",
-                        )),
-              );
+              context.router
+                  .push(DashboardRoute(textButton: "Wakwaw", title: "Yusup"));
             },
             child: const Text('Go to Dashboard'),
           ),

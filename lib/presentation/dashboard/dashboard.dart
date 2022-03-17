@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatelessWidget {
-  const Dashboard({
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({
     Key? key,
     this.title = "Dashboard",
     required this.textButton,

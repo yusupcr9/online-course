@@ -1,22 +1,20 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:course_online/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
-import 'presentation/home/home.dart';
-
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
+  MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo / Yusup',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-        ),
-        home: const Home());
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+    );
   }
 }
